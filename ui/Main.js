@@ -66,7 +66,7 @@ export default class Main extends Component {
     doAction = () => {
         // We can access navigation object via context
         const navigation = this.context;
-        navigation.navigate('NEXT');
+        navigation.navigate('Jog');
     }
 
     loadProgramClicked() {

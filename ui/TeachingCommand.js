@@ -7,17 +7,11 @@ import { StyleSheet, StatusBar, Alert, Button, Text, View } from 'react-native';
 export default class TeachingCommand extends Component {
 
 
-    static navigationOptions = {
-        title: 'second Screen',
-        headerStyle: { backgroundColor: '#aa0000', },
-        headerTintColor: 'white',
-    };
-
 
     constructor(props) {
         super(props);
         this.state = {
-            title: 'second  Screen',
+            title: 'teaching command  Screen',
             message: 'TeachingCommand of Robot ARM',
         }
     }
@@ -47,9 +41,8 @@ export default class TeachingCommand extends Component {
         );
     }
 
-
     doAction = () => {
-        this.props.navigation.navigate('Last');
+        this.props.navigation.navigate('AutoCalibration');
     }
 
 

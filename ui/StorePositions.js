@@ -4,17 +4,23 @@ import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput } from 'rea
 import { NavigationContext } from '@react-navigation/native';
 
 
-export default class Jog extends Component {
+export default class StorePositions extends Component {
 
     static contextType = NavigationContext;
+
+    static navigationOptions = {
+        title: 'Registers Screen',
+        headerStyle: { backgroundColor: '#aa0000', },
+        headerTintColor: 'white',
+    };
 
 
     constructor(props) {
         super(props);
 
         this.state = {
-            title: 'Jog Screen',
-            message: 'Jog page of Robot ARM',
+            title: 'Registers Screen',
+            message: 'Registers page of Robot ARM',
         }
         this.changeProgramName = this.changeProgramName.bind(this)
         this.programName = "start programname"
@@ -37,8 +43,7 @@ export default class Jog extends Component {
 
         return (
             <View style={styles.container}>
-                <Text>Jog</Text>
-                <Text>Home Robot Arm Powered by ARSC </Text>
+                <Text>Registers </Text>
 
                 <Text>Information : </Text>
                 <Text>Program: </Text>
@@ -60,7 +65,7 @@ export default class Jog extends Component {
     doAction = () => {
         // We can access navigation object via context
         const navigation = this.context;
-        navigation.navigate('TeachingCommand');
+        navigation.navigate('Vision');
     }
 
     loadProgramClicked() {

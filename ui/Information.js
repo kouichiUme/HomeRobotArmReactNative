@@ -1,20 +1,20 @@
-
 import React, { Component } from 'react';
 import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput } from 'react-native';
 import { NavigationContext } from '@react-navigation/native';
 
 
-export default class Jog extends Component {
+export default class Information extends Component {
 
     static contextType = NavigationContext;
+
 
 
     constructor(props) {
         super(props);
 
         this.state = {
-            title: 'Jog Screen',
-            message: 'Jog page of Robot ARM',
+            title: 'Log Screen',
+            message: 'Main page of Robot ARM',
         }
         this.changeProgramName = this.changeProgramName.bind(this)
         this.programName = "start programname"
@@ -37,8 +37,7 @@ export default class Jog extends Component {
 
         return (
             <View style={styles.container}>
-                <Text>Jog</Text>
-                <Text>Home Robot Arm Powered by ARSC </Text>
+                <Text>Information!</Text>
 
                 <Text>Information : </Text>
                 <Text>Program: </Text>
@@ -60,7 +59,7 @@ export default class Jog extends Component {
     doAction = () => {
         // We can access navigation object via context
         const navigation = this.context;
-        navigation.navigate('TeachingCommand');
+        navigation.navigate('Home');
     }
 
     loadProgramClicked() {
