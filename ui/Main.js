@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react';
 import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput } from 'react-native';
-import { Header } from 'react-native-elements'
+import { Header, Image } from 'react-native-elements'
 import { NavigationContext } from '@react-navigation/native';
+import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default class Main extends Component {
@@ -22,7 +23,8 @@ export default class Main extends Component {
         this.state = {
             title: 'Main Screen',
             message: 'Main page of Robot ARM',
-            information: "information "
+            information: "information ",
+            row: "0"
         }
         this.changeProgramName = this.changeProgramName.bind(this)
         this.programName = "start programname"
@@ -37,26 +39,51 @@ export default class Main extends Component {
 
         const styles = StyleSheet.create({
             container: {
-                flex: 7,
+                flex: 1,
                 backgroundColor: '#fff',
                 alignItems: 'center',
                 justifyContent: 'center',
             },
-            viewColInfo: {
+            viewInfo: {
                 flex: 1,
                 flexDirection: 'column',
                 justifyContent: 'flex-start'
             },
-
-            viewCol: {
-                flex: 7,
-                flexDirection: 'column',
-
-            },
-            view1: {
+            viewProgramName: {
                 flex: 1,
                 flexDirection: 'row',
                 justifyContent: 'flex-start'
+            },
+            viewControllerButton: {
+                flex: 2,
+                flexDirection: 'row',
+                justifyContent: 'flex-start'
+            },
+            viewPlayButton: {
+                flex: 3,
+            },
+            viewFwdButton: {
+                flex: 2,
+            },
+            viewRevButton: {
+                flex: 2,
+            },
+            viewStopButton: {
+                flex: 3,
+            },
+            viewProgramInfo: {
+                flex: 1,
+                flexDirection: 'row',
+
+            },
+            viewTeachingList: {
+                flex: 8,
+                flexDirection: 'row',
+                justifyContent: 'flex-start'
+            },
+            viewFooter: {
+                flex: 1,
+
             }
         });
 
@@ -64,31 +91,67 @@ export default class Main extends Component {
         return (
             <View style={styles.container}>
                 <Header><Text>header</Text></Header>
-                <View >
-                    <View style={styles.viewColInfo}>
-                        <Text>Open up App.js to start working on your app!</Text>
-                        <Text>Home Robot Arm Powered by ARSC </Text>
+                <View  >
+                    <View style={styles.viewInfo}>
+                        <Text>Information : Home Robot Arm Powered by ARSC </Text>
                     </View>
-                    <View style={styles.view1}>
-                        <Text>Information : </Text>
-                    </View>
-                    <View style={styles.view1}>
-                        <Text style={{ flex: 1, backgroundColor: 'blue' }}>Program: </Text>
-                        <TextInput style={{ flex: 1, backgroundColor: 'red' }} placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                    </View>
-                    <View style={styles.viewCol}>
-                        <Button title="Load Program" onPress={this.loadProgramClicked} />
-                        <Button title="run program" onPress={this.runProgrammClicked} ></Button>
-                        <Button title="FWD" ></Button>
-                        <Button title="REV" ></Button>
-                        <Button title="STOP" ></Button>
+                    <View style={styles.viewProgramName}>
+                        <View style={{ flex: 3, }}>
+                            <Text >Program: </Text>
+                        </View>
+                        <View style={{ flex: 4, }} >
+                            <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        </View>
+                        <View style={{ flex: 3, }} >
+                            <Button onPress={this.changeProgramName} title='load Program' />
+                        </View>
 
-                        <Text>  Infromation : {this.state.information}</Text>
-                        <Text >Current Row</Text>
+                    </View>
+                    <View style={styles.viewControllerButton}>
+                        <View style={styles.viewPlayButton}>
+                            <TouchableOpacity onPress={() => { }} style={{ height: '100%' }} >
+                                <Image source={require('../assets/playicon.png')} style={
+                                    { width: 64, height: 64 }
+                                } />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.viewFwdButton}>
+                            <Button title='fwd' ></Button>
+                        </View>
+                        <View style={styles.viewRevButton} >
+                            <Button title='rev' ></Button>
+                        </View>
+                        <View style={styles.viewStopButton} >
+                            <Button title='Stop'></Button>
+                        </View>
+
+                    </View>
+                    <View style={styles.viewProgramInfo}>
+                        <View >
+                            <Text>  Infromation : {this.state.information}</Text>
+                        </View>
+                        <View style={{
+                            flex: 1,
+                            flexDirection: "row",
+                            justifyContent: 'flex-end'
+
+                        }}>
+                            <View>
+                                <Text >Current Row</Text>
+                            </View>
+                            <View >
+                                <TextInput placeholder="00" value={this.state.row} onChangeText={this.changeProgramName} />
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.viewTeachingList} >
+                        <FlatList >aa</FlatList>
+                    </View>
+                    <View style={styles.viewFooter}>
                         <Button title="Next Screen >>" onPress={this.doAction} />
                     </View>
                 </View>
-            </View>
+            </View >
         );
     }
 
