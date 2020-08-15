@@ -60,16 +60,17 @@ export default class Main extends Component {
                 justifyContent: 'flex-start'
             },
             viewPlayButton: {
-                flex: 3,
+                flex: 5,
+                justifyContent: 'flex-start'
             },
             viewFwdButton: {
-                flex: 2,
+                flex: 3,
             },
             viewRevButton: {
-                flex: 2,
+                flex: 3,
             },
             viewStopButton: {
-                flex: 3,
+                flex: 5,
             },
             viewProgramInfo: {
                 flex: 1,
@@ -77,7 +78,7 @@ export default class Main extends Component {
 
             },
             viewTeachingList: {
-                flex: 8,
+                flex: 1,
                 flexDirection: 'row',
                 justifyContent: 'flex-start'
             },
@@ -86,7 +87,6 @@ export default class Main extends Component {
 
             }
         });
-
 
         return (
             <View style={styles.container}>
@@ -109,7 +109,7 @@ export default class Main extends Component {
                     </View>
                     <View style={styles.viewControllerButton}>
                         <View style={styles.viewPlayButton}>
-                            <TouchableOpacity onPress={() => { }} style={{ height: '100%' }} >
+                            <TouchableOpacity onPress={() => { }}  >
                                 <Image source={require('../assets/playicon.png')} style={
                                     { width: 64, height: 64 }
                                 } />
@@ -122,7 +122,11 @@ export default class Main extends Component {
                             <Button title='rev' ></Button>
                         </View>
                         <View style={styles.viewStopButton} >
-                            <Button title='Stop'></Button>
+                            <TouchableOpacity onPress={() => { }}  >
+                                <Image source={require('../assets/stopicon.png')} style={
+                                    { width: 64, height: 64 }
+                                } />
+                            </TouchableOpacity>
                         </View>
 
                     </View>
@@ -137,7 +141,7 @@ export default class Main extends Component {
 
                         }}>
                             <View>
-                                <Text >Current Row</Text>
+                                <Text >Current Row = </Text>
                             </View>
                             <View >
                                 <TextInput placeholder="00" value={this.state.row} onChangeText={this.changeProgramName} />

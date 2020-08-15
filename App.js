@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Main from './ui/Main'
 import TeachingCommand from './ui/TeachingCommand'
 import Jog from './ui/Jog'
+import JogXyz from './ui/JogXyz'
+import JogTxyz from './ui/JogTxyz'
 import AutoCalibration from './ui/AutoCalibration'
 import CalibrationParameters from './ui/CalibrationParameters'
 import CalibrationWorkUnit from './ui/CalibrationWorkUnit'
@@ -31,6 +33,8 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Main} />
         <Stack.Screen name="Jog" component={Jog} />
+        <Stack.Screen name="JogXyz" component={JogXyz} />
+        <Stack.Screen name="JogTxyz" component={JogTxyz} />
         <Stack.Screen name="TeachingCommand" component={TeachingCommand} />
         <Stack.Screen name="AutoCalibration" component={AutoCalibration} />
         <Stack.Screen name="CalibrationParameters" component={CalibrationParameters} />
