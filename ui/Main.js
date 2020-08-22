@@ -36,6 +36,8 @@ export default class Main extends Component {
 
     render() {
 
+        this.runProgrammClicked()
+
 
         const styles = StyleSheet.create({
             container: {

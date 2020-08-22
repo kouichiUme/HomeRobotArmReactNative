@@ -3,7 +3,7 @@ import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput } from 'rea
 import { NavigationContext } from '@react-navigation/native';
 
 
-export default class IoConditions extends Component {
+export default class CalibrationDistance extends Component {
 
     static contextType = NavigationContext;
 
@@ -13,8 +13,8 @@ export default class IoConditions extends Component {
         super(props);
 
         this.state = {
-            title: 'Ioconditions Screen',
-            message: 'Ioconditions of Robot ARM',
+            title: 'Log Screen',
+            message: 'Main page of Robot ARM',
         }
         this.changeProgramName = this.changeProgramName.bind(this)
         this.programName = "start programname"
@@ -37,9 +37,9 @@ export default class IoConditions extends Component {
 
         return (
             <View style={styles.container}>
-                <Text>Ioconditions!</Text>
+                <Text>CalibrationParameters!</Text>
 
-                <Text>do entry : </Text>
+                <Text>Information : </Text>
                 <Text>Program: </Text>
                 <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
                 <Button title="Load Program" onPress={this.loadProgramClicked} />
@@ -59,7 +59,7 @@ export default class IoConditions extends Component {
     doAction = () => {
         // We can access navigation object via context
         const navigation = this.context;
-        navigation.navigate('Registers');
+        navigation.navigate('CalibrationWorkUnit');
     }
 
     loadProgramClicked() {

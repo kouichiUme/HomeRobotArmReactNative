@@ -3,7 +3,7 @@ import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput } from 'rea
 import { NavigationContext } from '@react-navigation/native';
 
 
-export default class CalibrationParameters extends Component {
+export default class CalibrationJoint extends Component {
 
     static contextType = NavigationContext;
 
@@ -59,7 +59,7 @@ export default class CalibrationParameters extends Component {
     doAction = () => {
         // We can access navigation object via context
         const navigation = this.context;
-        navigation.navigate('CalibrationWorkUnit');
+        navigation.navigate('CalibrationDistance');
     }
 
     loadProgramClicked() {

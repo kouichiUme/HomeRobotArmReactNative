@@ -7,7 +7,8 @@ import Jog from './ui/Jog'
 import JogXyz from './ui/JogXyz'
 import JogTxyz from './ui/JogTxyz'
 import AutoCalibration from './ui/AutoCalibration'
-import CalibrationParameters from './ui/CalibrationParameters'
+import CalibrationJoint from './ui/CalibrationJoint'
+import CalibrationDistance from './ui/CalibrationDistance'
 import CalibrationWorkUnit from './ui/CalibrationWorkUnit'
 import IoConditions from './ui/IoConditions'
 import ServoControl from './ui/ServoControl'
@@ -19,6 +20,7 @@ import Information from './ui/Information'
 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
+
 
 
 const Stack = createStackNavigator();
@@ -37,7 +39,8 @@ export default function App() {
         <Stack.Screen name="JogTxyz" component={JogTxyz} />
         <Stack.Screen name="TeachingCommand" component={TeachingCommand} />
         <Stack.Screen name="AutoCalibration" component={AutoCalibration} />
-        <Stack.Screen name="CalibrationParameters" component={CalibrationParameters} />
+        <Stack.Screen name="CalibrationJoint" component={CalibrationJoint} />
+        <Stack.Screen name="CalibrationDistance" component={CalibrationDistance} />
         <Stack.Screen name="CalibrationWorkUnit" component={CalibrationWorkUnit} />
         <Stack.Screen name="ServoControl" component={ServoControl} />
         <Stack.Screen name="IoConditions" component={IoConditions} />
