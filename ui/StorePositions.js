@@ -36,23 +36,195 @@ export default class StorePositions extends Component {
                 flex: 1,
                 backgroundColor: '#fff',
                 alignItems: 'center',
-                justifyContent: 'center',
+                // justifyContent: 'center',
             },
         });
 
 
         return (
             <View style={styles.container}>
-                <Text>Registers </Text>
+                <Text>StoredPosition </Text>
+                <Button title="Next Screen >>" onPress={this.doAction} />
 
-                <Text>Information : </Text>
-                <Text>Program: </Text>
-                <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                <Button title="Load Program" onPress={this.loadProgramClicked} />
-                <Button title="run program" ></Button>
-                <Button title="FWD" ></Button>
-                <Button title="REV" ></Button>
-                <Button title="STOP" ></Button>
+                <View>
+                    <Text>X</Text>
+                    <Text>Y</Text>
+                    <Text>Z</Text>
+                    <Text>W</Text>
+                    <Text>P</Text>
+                    <Text>R</Text>
+                    <Text></Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP1 (vision)</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP2</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP3</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP4</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP5</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP5</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP6</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP7</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP8</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP9</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP10</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP11</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP12</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP13</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP14</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP15</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>SP16</Text>
+                </View>
 
                 <Text>  Infromation now this is mock</Text>
                 <Text >Current Row</Text>

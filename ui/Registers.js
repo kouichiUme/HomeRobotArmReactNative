@@ -29,14 +29,12 @@ export default class Registers extends Component {
 
 
     render() {
-
-
         const styles = StyleSheet.create({
             container: {
                 flex: 1,
                 backgroundColor: '#fff',
                 alignItems: 'center',
-                justifyContent: 'center',
+                // justifyContent: 'center',
             },
         });
 
@@ -45,6 +43,70 @@ export default class Registers extends Component {
             <View style={styles.container}>
                 <Text>Registers</Text>
                 <Button title="Next Screen >>" onPress={this.doAction} />
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R1</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R2</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R3</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R4</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R5</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R6</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R7</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R8</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R9</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R10</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R11</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R12</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R13</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R14</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R15</Text>
+                </View>
+                <View>
+                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <Text>R16</Text>
+                </View>
                 <Text>Infromation now this is mock</Text>
                 <Text>Current Row</Text>
                 <Button title="Next Screen >>" onPress={this.doAction} />

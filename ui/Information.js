@@ -39,17 +39,13 @@ export default class Information extends Component {
             <View style={styles.container}>
                 <Text>Information!</Text>
 
-                <Text>Information : </Text>
+                {/* <a href="https://www.anninrobotoics.com/tutorials">https://www.anninrobotoics.com/tutorials</a> */}
                 <Text>Program: </Text>
                 <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                <Button title="Load Program" onPress={this.loadProgramClicked} />
-                <Button title="run program" ></Button>
-                <Button title="FWD" ></Button>
-                <Button title="REV" ></Button>
-                <Button title="STOP" ></Button>
-
+                
                 <Text>  Infromation now this is mock</Text>
-                <Text >Current Row</Text>
+                <Button title="paypal ">paypal</Button>
+
                 <Button title="Next Screen >>" onPress={this.doAction} />
             </View>
         );

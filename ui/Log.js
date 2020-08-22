@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput } from 'react-native';
+import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput ,ListView} from 'react-native';
 import { NavigationContext } from '@react-navigation/native';
 
 
@@ -40,16 +40,9 @@ export default class Log extends Component {
                 <Text>Log!</Text>
 
                 <Text>Information : </Text>
-                <Text>Program: </Text>
-                <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                <Button title="Load Program" onPress={this.loadProgramClicked} />
-                <Button title="run program" ></Button>
-                <Button title="FWD" ></Button>
-                <Button title="REV" ></Button>
-                <Button title="STOP" ></Button>
-
                 <Text>  Infromation now this is mock</Text>
-                <Text >Current Row</Text>
+                <Button title="Clear Log" onPress={this.doAction} />
+
                 <Button title="Next Screen >>" onPress={this.doAction} />
             </View>
         );
