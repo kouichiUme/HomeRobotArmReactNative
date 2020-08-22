@@ -30,7 +30,7 @@ export default class IoConditions extends Component {
                 flex: 1,
                 backgroundColor: '#fff',
                 alignItems: 'center',
-                justifyContent: 'center',
+                // justifyContent: 'center',
             },
         });
 
@@ -38,18 +38,74 @@ export default class IoConditions extends Component {
         return (
             <View style={styles.container}>
                 <Text>Ioconditions!</Text>
+                <Button title="Next Screen >>" onPress={this.doAction} />
 
-                <Text>do entry : </Text>
-                <Text>Program: </Text>
-                <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                <Button title="Load Program" onPress={this.loadProgramClicked} />
-                <Button title="run program" ></Button>
-                <Button title="FWD" ></Button>
-                <Button title="REV" ></Button>
-                <Button title="STOP" ></Button>
+                <View>
+                    <Text>Do entry</Text>
 
-                <Text>  Infromation now this is mock</Text>
-                <Text >Current Row</Text>
+                    <View>
+                        <Button title="Do 0 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Do 0 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Do 1 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Do 1 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Do 2 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Do 2 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Do 3 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Do 3 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+
+                    <View>
+                        <Button title="Do 4 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Do 4 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+
+                    <View>
+                        <Button title="Do 5 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Do 5 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View> 
+                </View>
                 <Button title="Next Screen >>" onPress={this.doAction} />
             </View>
         );

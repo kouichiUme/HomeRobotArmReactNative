@@ -43,19 +43,10 @@ export default class Registers extends Component {
 
         return (
             <View style={styles.container}>
-                <Text>Registers </Text>
-
-                <Text>Information : </Text>
-                <Text>Program: </Text>
-                <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                <Button title="Load Program" onPress={this.loadProgramClicked} />
-                <Button title="run program" ></Button>
-                <Button title="FWD" ></Button>
-                <Button title="REV" ></Button>
-                <Button title="STOP" ></Button>
-
-                <Text>  Infromation now this is mock</Text>
-                <Text >Current Row</Text>
+                <Text>Registers</Text>
+                <Button title="Next Screen >>" onPress={this.doAction} />
+                <Text>Infromation now this is mock</Text>
+                <Text>Current Row</Text>
                 <Button title="Next Screen >>" onPress={this.doAction} />
             </View>
         );

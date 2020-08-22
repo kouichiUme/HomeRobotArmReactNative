@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput } from 'react-native';
+import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput, CheckBox } from 'react-native';
 import { NavigationContext } from '@react-navigation/native';
 
 
@@ -44,23 +44,73 @@ export default class AutoCalibration extends Component {
                 <Text>AutoCalibration!</Text>
                 <View style={styles.jogLabel}>
                     <Text>X : </Text>
-                    <TextInput placeholder="20" value={this.j1currentAngle} onChangeText={this.changeProgramName} />
-                    <TextInput placeholder="10" value={this.j1DegreeeToJog} onChangeText={this.changeProgramName} />
-                    <Button title=" - "></Button>
-                    <Button title=" + " ></Button>
+                    <Button title=" Auto Calibrate " onPress={this.doAction}></Button>
+                    <Button title=" Calibrate @ Rest Position " ></Button>
                 </View>
-                <Text>Information : </Text>
-                <Text>Program: </Text>
-                <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                <Button title="Load Program" onPress={this.loadProgramClicked} />
-                <Button title="run program" ></Button>
-                <Button title="FWD" ></Button>
-                <Button title="REV" ></Button>
-                <Button title="STOP" ></Button>
+                <View style={styles.jogLabel}>
+                    <Button title=" Excecute Fine Calibration "></Button>
+                    <Button title=" Teach Fine Calibration "></Button>
+                    <Button title=" Go To Fine Calibration "></Button>
+                    <Text>Fine Calibration Position : </Text>
+                    <TextInput placeholder="20" value={this.j1currentAngle} onChangeText={this.changeProgramName} />
+                </View>
+                <View style={styles.jogLabel}>
+                    <View>
+                        <Button title="Calibrate J1 Only"></Button>
+                        <Button title="Calibrate J2 Only"></Button>
+                        <Button title="Calibrate J3 Only"></Button>
+                        <Button title="Calibrate J4 Only"></Button>
+                        <Button title="Calibrate J5 Only"></Button>
+                        <Button title="Calibrate J6 Only"></Button>
+                    </View>
+                    <View>
+                        <Button title="Calibrate Track To 0"></Button>
+                    </View>
+                </View>
+                <View style={styles.jogLabel}>
+                    <View>
+                        <TextInput placeholder="20" value={this.j1currentAngle} onChangeText={this.changeProgramName} />
+                        <Text>Calibration Directions (default = 001001) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="20" value={this.j1currentAngle} onChangeText={this.changeProgramName} />
+                        <Text>Motor Direction Oputput (default = 000000) </Text>
+                    </View>
+                </View>
+                <View style={styles.jogLabel}>
+                    <View>
+                        <CheckBox placeholder="20" value={this.j1currentAngle} onChangeText={this.changeProgramName} />
+                        <Text>J1 Open Loop (disable encoder)</Text>
+                    </View>
+                    <View>
+                        <CheckBox value={this.j1currentAngle} onChangeText={this.changeProgramName} />
+                        <Text>J2 Open Loop (disable encoder) </Text>
+                    </View>
+                    <View>
+                        <CheckBox value={this.j1currentAngle} onChangeText={this.changeProgramName} />
+                        <Text>J3 Open Loop (disable encoder) </Text>
+                    </View>
+                    <View>
+                        <CheckBox value={this.j1currentAngle} onChangeText={this.changeProgramName} />
+                        <Text>J4 Open Loop (disable encoder) </Text>
+                    </View>
+                    <View>
+                        <CheckBox value={this.j1currentAngle} onChangeText={this.changeProgramName} />
+                        <Text>J5 Open Loop (disable encoder) </Text>
+                    </View>
+                    <View>
+                        <CheckBox value={this.j1currentAngle} onChangeText={this.changeProgramName} />
+                        <Text>J6 Open Loop (disable encoder) </Text>
+                    </View> 
+                </View>
+                <View >
+                    <Text>Information : </Text>
+                    <Text>Program: </Text>
 
-                <Text>  Infromation now this is mock</Text>
-                <Text >Current Row</Text>
-                <Button title="Next Screen >>" onPress={this.doAction} />
+                    <Text>  Infromation now this is mock</Text>
+                    <Text >Current Row</Text>
+                    <Button title="Next Screen >>" onPress={this.doAction} />
+                </View>
             </View>
         );
     }

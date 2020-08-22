@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput } from 'react-native';
 import { NavigationContext } from '@react-navigation/native';
@@ -36,25 +35,65 @@ export default class ServoControl extends Component {
                 flex: 1,
                 backgroundColor: '#fff',
                 alignItems: 'center',
-                justifyContent: 'center',
+                // justifyContent: 'center',
             },
         });
 
 
         return (
             <View style={styles.container}>
-                <Text>ServoControl </Text>
+                <Text>ServoControl</Text>
+                <Button title="Next Screen >>" onPress={this.doAction} />
+                <View>
+                    <View>
+                        <Button title="Servo 0 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                    <View>
+                        <Button title="Servo 0 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
 
-                <Text>Information : </Text>
-                <Text>Program: </Text>
-                <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                <Button title="Load Program" onPress={this.loadProgramClicked} />
-                <Button title="run program" ></Button>
-                <Button title="FWD" ></Button>
-                <Button title="REV" ></Button>
-                <Button title="STOP" ></Button>
+                    <View>
+                        <Button title="Servo 1 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
 
-                <Text>  Infromation now this is mock</Text>
+                    <View>
+                        <Button title="Servo 1 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+
+
+                    <View>
+                        <Button title="Servo 2 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+
+                    <View>
+                        <Button title="Servo 2 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+
+                    <View>
+                        <Button title="Servo 3 on" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+
+                    <View>
+                        <Button title="Servo 3 off" onPress={this.loadProgramClicked} />
+                        <Text> = </Text>
+                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                </View>
+                <Text>Infromation now this is mock </Text>
                 <Text >Current Row</Text>
                 <Button title="Next Screen >>" onPress={this.doAction} />
             </View>

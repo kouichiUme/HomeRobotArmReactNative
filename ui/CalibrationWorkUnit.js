@@ -30,7 +30,7 @@ export default class CalibrationWorkUnit extends Component {
                 flex: 1,
                 backgroundColor: '#fff',
                 alignItems: 'center',
-                justifyContent: 'center',
+                // justifyContent: 'center',
             },
         });
 
@@ -38,15 +38,43 @@ export default class CalibrationWorkUnit extends Component {
         return (
             <View style={styles.container}>
                 <Text>CalibrationWorkUnit!</Text>
+                <Button title="Next Screen >>" onPress={this.doAction} />
+                <View>
+                    <Text>WorkFrame : </Text>
+                    <View>
+                        <Text > X </Text>
+                        <Text > Y </Text>
+                        <Text > Z </Text>
+                        <Text > Rx </Text>
+                        <Text > Ry </Text>
+                        <Text > Rz </Text>
+                    </View>
+                </View>
+                <View>
+                    <Text>WorkFrame : </Text>
+                    <View>
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
+                </View>
+                <View>
+                    <Text>Tool Frame : </Text>
+                    <View>
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="0" value={this.programName} onChangeText={this.changeProgramName} />
+                    </View>
 
-                <Text>Information : </Text>
-                <Text>Program: </Text>
-                <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                <Button title="Load Program" onPress={this.loadProgramClicked} />
-                <Button title="run program" ></Button>
-                <Button title="FWD" ></Button>
-                <Button title="REV" ></Button>
-                <Button title="STOP" ></Button>
+                </View>
+
+                <Button title="Save Calibration" onPress={this.loadProgramClicked} />
 
                 <Text>  Infromation now this is mock</Text>
                 <Text >Current Row</Text>

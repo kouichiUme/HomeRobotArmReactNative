@@ -13,7 +13,7 @@ export default class CalibrationDistance extends Component {
         super(props);
 
         this.state = {
-            title: 'Log Screen',
+            title: 'Calibration Distance',
             message: 'Main page of Robot ARM',
         }
         this.changeProgramName = this.changeProgramName.bind(this)
@@ -30,23 +30,118 @@ export default class CalibrationDistance extends Component {
                 flex: 1,
                 backgroundColor: '#fff',
                 alignItems: 'center',
-                justifyContent: 'center',
+                // justifyContent: 'center',
             },
         });
 
 
         return (
             <View style={styles.container}>
-                <Text>CalibrationParameters!</Text>
+                <Text>DH Parameters</Text>
+                <Button title="Next Screen >>" onPress={this.doAction} />
+                <View>
+                    <View>
+                        <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH alpha-1 (link twist) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH alpha-2 (link twist) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH alpha-3 (link twist) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH alpha-4 (link twist) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH alpha-5 (link twist) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH alpha-6 (link twist) </Text>
+                    </View>
+                </View>
+                <View>
+                    <View>
+                        <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH a-1 (link length) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH a-2 (link length) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH a-3 (link length) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH a-4 (link length) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH a-5 (link length) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH a-6 (link length) </Text>
+                    </View>
 
-                <Text>Information : </Text>
-                <Text>Program: </Text>
-                <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                <Button title="Load Program" onPress={this.loadProgramClicked} />
-                <Button title="run program" ></Button>
-                <Button title="FWD" ></Button>
-                <Button title="REV" ></Button>
-                <Button title="STOP" ></Button>
+                    {/*  dh d-1  */}
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH d-1 (link offset) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH d-2 (link offset) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH d-3 (link offset) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH d-4 (link offset) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH d-5 (link offset) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH d-6 (link offset) </Text>
+                    </View>
+                {/* dh theta */}
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH theta-1 (joint angle) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH theta-2 (joint angle) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH theta-3 (joint angle) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH theta-4 (joint angle) </Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH theta-5 (joint angle)</Text>
+                    </View>
+                    <View>
+                        <TextInput placeholder="0.0" value={this.programName} onChangeText={this.changeProgramName} />
+                        <Text>DH theta-6 (joint angle) </Text>
+                    </View>
+                </View>
 
                 <Text>  Infromation now this is mock</Text>
                 <Text >Current Row</Text>
