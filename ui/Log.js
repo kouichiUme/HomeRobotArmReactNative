@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput ,ListView} from 'react-native';
+import { StyleSheet, StatusBar, Alert, Button, Text, View, TextInput, ListView } from 'react-native';
 import { NavigationContext } from '@react-navigation/native';
 
 
@@ -27,20 +27,22 @@ export default class Log extends Component {
 
         const styles = StyleSheet.create({
             container: {
-                flex: 1,
+                flex: 24,
                 backgroundColor: '#fff',
                 alignItems: 'center',
                 justifyContent: 'center',
             },
+            bigcContent: {
+                flex: 22,
+            }
         });
 
 
         return (
             <View style={styles.container}>
-                <Text>Log!</Text>
-
-                <Text>Information : </Text>
-                <Text>  Infromation now this is mock</Text>
+                <View style={styles.bigcContent}>
+                    <Text>Log!</Text>
+                </View>
                 <Button title="Clear Log" onPress={this.doAction} />
 
                 <Button title="Next Screen >>" onPress={this.doAction} />

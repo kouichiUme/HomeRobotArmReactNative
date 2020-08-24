@@ -27,26 +27,34 @@ export default class Information extends Component {
 
         const styles = StyleSheet.create({
             container: {
-                flex: 1,
+                flex: 24,
                 backgroundColor: '#fff',
                 alignItems: 'center',
                 justifyContent: 'center',
             },
+            bigcContent: {
+                flex: 22,
+
+
+            }
         });
 
 
         return (
             <View style={styles.container}>
-                <Text>Information!</Text>
+                <View >
+                    {/* <a href="https://www.anninrobotoics.com/tutorials">https://www.anninrobotoics.com/tutorials</a> */}
+                    <Text>Program: </Text>
 
-                {/* <a href="https://www.anninrobotoics.com/tutorials">https://www.anninrobotoics.com/tutorials</a> */}
-                <Text>Program: </Text>
-                <TextInput placeholder="Program Name" value={this.programName} onChangeText={this.changeProgramName} />
-                
-                <Text>  Infromation now this is mock</Text>
-                <Button title="paypal ">paypal</Button>
+                    <Button title="paypal ">paypal</Button>
+                </View>
+                <View style={styles.bigcContent}>
+                    <Text>Information!</Text>
+                </View>
 
-                <Button title="Next Screen >>" onPress={this.doAction} />
+                <View>
+                    <Button title="Next Screen >>" onPress={this.doAction} />
+                </View>
             </View>
         );
     }
