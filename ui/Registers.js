@@ -21,7 +21,7 @@ export default class Registers extends Component {
         this.state = {
             title: 'Registers Screen',
             message: 'Registers page of Robot ARM',
-            register: [{}]
+            register: [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
         }
         this.changeProgramName = this.changeProgramName.bind(this)
         this.programName = "start programname"
@@ -29,6 +29,7 @@ export default class Registers extends Component {
         this.fetchRegisterInfo = this.fetchRegisterInfo.bind(this)
 
         // registers
+        this.fetchRegisterInfo()
     }
 
     async fetchRegisterInfo() {
@@ -41,8 +42,8 @@ export default class Registers extends Component {
 
             })
 
-        let registgerMessage = await response.json()
-        this.setState({ 'register': registerMessage.servo })
+        let registerMessage = await response.json()
+        this.setState({ 'register': registerMessage.registers })
 
 
 
@@ -75,67 +76,67 @@ export default class Registers extends Component {
             <View style={styles.container}>
                 <Text>Registers</Text>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[0].value)} onChangeText={this.changeProgramName} />
                     <Text>R1</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[1].value)} onChangeText={this.changeProgramName} />
                     <Text>R2</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[2].value)} onChangeText={this.changeProgramName} />
                     <Text>R3</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[3].value)} onChangeText={this.changeProgramName} />
                     <Text>R4</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[4].value)} onChangeText={this.changeProgramName} />
                     <Text>R5</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[5].value)} onChangeText={this.changeProgramName} />
                     <Text>R6</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[6].value)} onChangeText={this.changeProgramName} />
                     <Text>R7</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[7].value)} onChangeText={this.changeProgramName} />
                     <Text>R8</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[8].value)}onChangeText={this.changeProgramName} />
                     <Text>R9</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[9].value)} onChangeText={this.changeProgramName} />
                     <Text>R10</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[10].value)}onChangeText={this.changeProgramName} />
                     <Text>R11</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[11].value)} onChangeText={this.changeProgramName} />
                     <Text>R12</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[12].value)}onChangeText={this.changeProgramName} />
                     <Text>R13</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[13].value)}onChangeText={this.changeProgramName} />
                     <Text>R14</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[14].value)}onChangeText={this.changeProgramName} />
                     <Text>R15</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder=" -90.0 " value={this.programName} onChangeText={this.changeProgramName} />
+                    <TextInput placeholder=" -90.0 " value={String(this.state.register[15].value)} onChangeText={this.changeProgramName} />
                     <Text>R16</Text>
                 </View>
                 <Button title="Next Screen >>" onPress={this.doAction} />

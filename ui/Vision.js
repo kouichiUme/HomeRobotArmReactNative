@@ -14,8 +14,66 @@ export default class Vision extends Component {
         this.state = {
             title: 'Vision  command  Screen',
             message: 'Vision  of Robot ARM',
-            vision: {}
+            vision: {
+                "fileLocation": "",
+                "calibrationPixels": {
+                    "origin": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "end": {
+                        "X": 0,
+                        "Y": 0
+                    }
+                },
+                "calibrationRobotMM": {
+                    "origin": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "end": {
+                        "X": 0,
+                        "Y": 0
+                    }
+                },
+                "option": 0,
+                "position": {
+                    "X": 0,
+                    "Y": 0,
+                    "R": 0
+                },
+                "pixel": {
+                    "X": 0,
+                    "Y": 0
+                }
+            }
         }
+
+
+        this.programName = " "
+        this.doAction = this.doAction.bind(this)
+        this.fetchStorePosition = this.fetchVision.bind(this)
+
+        this.fetchVision()
+
+
+
+    }
+
+
+
+    async fetchVision() {
+
+        let response = await fetch('http://192.168.11.8:8000/ArmRestApi/vision',
+            {
+                method: "GET",
+                mode: 'cors',
+                credentials: 'same-origin'
+
+            })
+
+        let vision = await response.json()
+        this.setState({ 'vision': vision })
     }
 
     render() {
@@ -47,7 +105,7 @@ export default class Vision extends Component {
                 <Text>Vision Control</Text>
                 <View style={styles.row}>
                     <Text style={styles.title}>Vision File location</Text>
-                    <TextInput placeholder="C:\Users\pc\desktop\test.vis" value={this.state.message} onChange />
+                    <TextInput placeholder="C:\Users\pc\desktop\test.vis" value={this.state.vision.fileLocation} onChange />
                 </View>
                 <View style={styles.row}>
                     <Text >  </Text>
@@ -59,42 +117,42 @@ export default class Vision extends Component {
 
                 <View style={styles.row}>
                     <Text >Calibration Pixels</Text>
-                    <TextInput placeholder="0" value={this.state.message} />
-                    <TextInput placeholder="0" value={this.state.message} />
-                    <TextInput placeholder="0" value={this.state.message} />
-                    <TextInput placeholder="0" value={this.state.message} />
+                    <TextInput placeholder="0" value={String(this.state.vision.calibrationPixels.origin.X)} />
+                    <TextInput placeholder="0" value={String(this.state.vision.calibrationPixels.origin.Y)} />
+                    <TextInput placeholder="0" value={String(this.state.vision.calibrationPixels.end.X)} />
+                    <TextInput placeholder="0" value={String(this.state.vision.calibrationPixels.end.Y)} />
                 </View>
                 <View style={styles.row}>
                     <Text >Calibration Robot MM</Text>
-                    <TextInput placeholder="0" value={this.state.message} />
-                    <TextInput placeholder="0" value={this.state.message} />
-                    <TextInput placeholder="0" value={this.state.message} />
-                    <TextInput placeholder="0" value={this.state.message} />
+                    <TextInput placeholder="0" value={String(this.state.vision.calibrationRobotMM.origin.X)} />
+                    <TextInput placeholder="0" value={String(this.state.vision.calibrationRobotMM.origin.Y)} />
+                    <TextInput placeholder="0" value={String(this.state.vision.calibrationRobotMM.end.X)} />
+                    <TextInput placeholder="0" value={String(this.state.vision.calibrationRobotMM.end.Y)} />
                 </View>
                 <View style={styles.row}>
                     <Text >Choose Vision Format</Text>
                 </View>
                 <View style={styles.row}>
-                    <Text> option </Text>
+                    <Text>  {this.state.vision.option} </Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder="0" value={this.state.message} />
+                    <TextInput placeholder="0" value={String(this.state.vision.position.X)} />
                     <Text >X found position (mm) </Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder="0" value={this.state.message} />
+                    <TextInput placeholder="0" value={String(this.state.vision.position.Y)} />
                     <Text >Y found position (mm) </Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder="0" value={this.state.message} />
+                    <TextInput placeholder="0" value={String(this.state.vision.position.R)}/>
                     <Text >R found position (mm)</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder="0" value={this.state.message} />
+                    <TextInput placeholder="0" value={String(this.state.vision.pixel.X)}/>
                     <Text >X pixes returned from Camera/</Text>
                 </View>
                 <View style={styles.row}>
-                    <TextInput placeholder="0" value={this.state.message} />
+                    <TextInput placeholder="0" value={String(this.state.vision.pixel.Y)}/>
                     <Text >Y pixes returned from Camera</Text>
                 </View>
                 <View style={styles.row}>

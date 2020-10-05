@@ -15,7 +15,7 @@ export default class IoConditions extends Component {
         this.state = {
             title: 'Ioconditions Screen',
             message: 'Ioconditions of Robot ARM',
-            doEntries: [{}]
+            doEntries: [{},{},{},{},{},{},{},{},{},{},{},{}]
         }
         this.changeProgramName = this.changeProgramName.bind(this)
         this.programName = "start programname"
@@ -77,59 +77,59 @@ export default class IoConditions extends Component {
                     <View style={styles.row}>
                         <Button title="Do 0 off" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[1].value)} onChangeText={this.changeProgramName} />
                     </View>
                     <View style={styles.row}>
                         <Button title="Do 1 on" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[2].value)} onChangeText={this.changeProgramName} />
                     </View>
                     <View style={styles.row}>
                         <Button title="Do 1 off" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[3].value)} onChangeText={this.changeProgramName} />
                     </View>
                     <View style={styles.row}>
                         <Button title="Do 2 on" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[4].value)} onChangeText={this.changeProgramName} />
                     </View>
                     <View style={styles.row}>
                         <Button title="Do 2 off" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[5].value)} onChangeText={this.changeProgramName} />
                     </View>
                     <View style={styles.row}>
                         <Button title="Do 3 on" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[6].value)} onChangeText={this.changeProgramName} />
                     </View>
                     <View style={styles.row}>
                         <Button title="Do 3 off" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[7].value)} onChangeText={this.changeProgramName} />
                     </View>
 
                     <View style={styles.row}>
                         <Button title="Do 4 on" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[8].value)} onChangeText={this.changeProgramName} />
                     </View>
                     <View style={styles.row}>
                         <Button title="Do 4 off" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[9].value)} onChangeText={this.changeProgramName} />
                     </View>
 
                     <View style={styles.row}>
                         <Button title="Do 5 on" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[10].value)} onChangeText={this.changeProgramName} />
                     </View>
                     <View style={styles.row}>
                         <Button title="Do 5 off" onPress={this.loadProgramClicked} />
                         <Text> = </Text>
-                        <TextInput placeholder="Name" value={this.programName} onChangeText={this.changeProgramName} />
+                        <TextInput placeholder="Name" value={String(this.state.doEntries[11].value)} onChangeText={this.changeProgramName} />
                     </View>
                 </View>
                 <Button title="Next Screen >>" onPress={this.doAction} />

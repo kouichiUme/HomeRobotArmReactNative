@@ -15,10 +15,29 @@ export default class Log extends Component {
         this.state = {
             title: 'Log Screen',
             message: 'Main page of Robot ARM',
+            log : []
         }
         this.changeProgramName = this.changeProgramName.bind(this)
         this.programName = "start programname"
         this.doAction = this.doAction.bind(this)
+
+
+        this.fetchLog()
+
+    }
+
+    async fetchLog() {
+
+        let response = await fetch('http://192.168.11.8:8000/ArmRestApi/log',
+            {
+                method: "GET",
+                mode: 'cors',
+                credentials: 'same-origin'
+
+            })
+
+        let log = await response.json()
+        this.setState({ 'log': log.log })
     }
 
 
@@ -43,6 +62,9 @@ export default class Log extends Component {
                 <View style={styles.bigcContent}>
                     <Text>Log!</Text>
                 </View>
+                {this.state.log.map(logLine => {
+                    return <Text>{logLine}</Text>
+                })}
                 <Button title="Clear Log" onPress={this.doAction} />
 
                 <Button title="Next Screen >>" onPress={this.doAction} />
