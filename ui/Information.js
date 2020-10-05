@@ -15,10 +15,30 @@ export default class Information extends Component {
         this.state = {
             title: 'Log Screen',
             message: 'Main page of Robot ARM',
+            infos : []
         }
         this.changeProgramName = this.changeProgramName.bind(this)
         this.programName = "start programname"
         this.doAction = this.doAction.bind(this)
+
+
+        this.fetchInformation()
+
+    }
+
+
+    async fetchInformation() {
+
+        let response = await fetch('http://192.168.11.8:8000/ArmRestApi/infos',
+            {
+                method: "GET",
+                mode: 'cors',
+                credentials: 'same-origin'
+
+            })
+
+        let infos = await response.json()
+        this.setState({ 'infos': infos.infos })
     }
 
 
@@ -52,6 +72,9 @@ export default class Information extends Component {
                     <Text>Information!</Text>
                 </View>
 
+                {this.state.infos.map(info => {
+                    return <Text>{info}</Text>
+                })}
                 <View>
                     <Button title="Next Screen >>" onPress={this.doAction} />
                 </View>

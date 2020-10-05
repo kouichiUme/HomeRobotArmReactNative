@@ -21,7 +21,7 @@ export default class Log extends Component {
         this.programName = "start programname"
         this.doAction = this.doAction.bind(this)
 
-
+        this.fetchLog = this.fetchLog.bind(this)
         this.fetchLog()
 
     }
