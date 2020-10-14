@@ -24,19 +24,120 @@ export default class Main extends Component {
             title: 'Main Screen',
             message: 'Main page of Robot ARM',
             information: "information ",
-            row: "0"
+            row: "0",
+            url: "http://192.168.11.8:8000/ArmRestApi/",
+            ipAddress: "192.168.11.8:8000"
         }
+        this.changeUrl = this.changeUrl.bind(this)
         this.changeProgramName = this.changeProgramName.bind(this)
         this.programName = "start programname"
         this.doAction = this.doAction.bind(this)
-        this.runProgrammClicked = this.runProgrammClicked.bind(this)
 
+        this.fetchMainInfo = this.fetchMainInfo.bind(this)
+        this.runProgram = this.runProgram.bind(this)
+        this.fwdProgram = this.fwdProgram.bind(this)
+        this.revProgram = this.revProgram.bind(this)
+        this.stopProgram = this.stopProgram.bind(this)
+        this.fetchMainInfo()
+
+    }
+
+
+    async runProgram() {
+
+        let response = await fetch(this.state.url + 'runProgram',
+            {
+                method: "GET",
+                mode: 'cors',
+                credentials: 'same-origin'
+
+            })
+        let runResult = await response.json()
+        this.setState({ 'information': runResult.info })
+
+
+    }
+
+
+    async stopProgram() {
+        let response = await fetch(this.state.url + 'stopProgram',
+            {
+                method: "GET",
+                mode: 'cors',
+                credentials: 'same-origin'
+
+            })
+
+        let stopResult = await response.json()
+        this.setState({ 'information': stopResult.info })
+
+    }
+    async fwdProgram() {
+
+        let response = await fetch(this.state.url + 'fwdProgram',
+            {
+                method: "GET",
+                mode: 'cors',
+                credentials: 'same-origin'
+
+            })
+
+        let fwdResult = await response.json()
+        this.setState({ 'information': fwdResult.info })
+
+    }
+    async revProgram() {
+        let response = await fetch(this.state.url + 'revProgram',
+            {
+                method: "GET",
+                mode: 'cors',
+                credentials: 'same-origin'
+
+            })
+
+        let revResult = await response.json()
+        this.setState({ 'information': revResult.info })
+
+    }
+
+    async loadProgramClicked() {
+        return "cliecked"
+    }
+
+
+    async fetchMainInfo() {
+
+        let response = await fetch(this.state.url,
+            {
+                method: "GET",
+                mode: 'cors',
+                credentials: 'same-origin'
+
+            })
+
+        let information = await response.json()
+        this.setState({ 'information': information.user })
+    }
+
+
+    changeUrl(inputValue) {
+        this.setState({ url: inputValue })
+    }
+
+    changeProgramName() {
+        return ""
+    }
+
+
+    doAction = () => {
+        // We can access navigation object via context
+        const navigation = this.context;
+        navigation.navigate('Jog');
     }
 
 
     render() {
 
-        this.runProgrammClicked()
 
 
         const styles = StyleSheet.create({
@@ -95,7 +196,7 @@ export default class Main extends Component {
                 <Header><Text>header</Text></Header>
                 <View  >
                     <View style={styles.viewInfo}>
-                        <Text>Information : Home Robot Arm Powered by ARSC </Text>
+                        <TextInput placeholder={this.state.url} value={this.state.url} onChangeText={this.changeUrl} />
                     </View>
                     <View style={styles.viewProgramName}>
                         <View style={{ flex: 3, }}>
@@ -111,20 +212,20 @@ export default class Main extends Component {
                     </View>
                     <View style={styles.viewControllerButton}>
                         <View style={styles.viewPlayButton}>
-                            <TouchableOpacity onPress={() => { }}  >
+                            <TouchableOpacity onPress={this.runProgram}  >
                                 <Image source={require('../assets/playicon.png')} style={
                                     { width: 64, height: 64 }
                                 } />
                             </TouchableOpacity>
                         </View>
                         <View style={styles.viewFwdButton}>
-                            <Button title='fwd' ></Button>
+                            <Button onPress={this.fwdProgram} title='fwd' ></Button>
                         </View>
                         <View style={styles.viewRevButton} >
-                            <Button title='rev' ></Button>
+                            <Button onPress={this.revProgram} title='rev' ></Button>
                         </View>
                         <View style={styles.viewStopButton} >
-                            <TouchableOpacity onPress={() => { }}  >
+                            <TouchableOpacity onPress={this.stopProgram}  >
                                 <Image source={require('../assets/stopicon.png')} style={
                                     { width: 64, height: 64 }
                                 } />
@@ -134,7 +235,7 @@ export default class Main extends Component {
                     </View>
                     <View style={styles.viewProgramInfo}>
                         <View >
-                            <Text>  Infromation : {this.state.information}</Text>
+                            <Text>  Infromation : {String(this.state.information)} </Text>
                         </View>
                         <View style={{
                             flex: 1,
@@ -159,34 +260,6 @@ export default class Main extends Component {
                 </View>
             </View >
         );
-    }
-
-
-    doAction = () => {
-        // We can access navigation object via context
-        const navigation = this.context;
-        navigation.navigate('Jog');
-    }
-
-    loadProgramClicked() {
-        return "cliecked"
-    }
-
-    async runProgrammClicked() {
-
-        let response = await fetch('http://192.168.11.8:8000/ArmRestApi/',
-            {
-                method: "GET",
-                mode: 'cors',
-                credentials: 'same-origin'
-
-            })
-
-        let information = await response.json()
-        this.setState({ 'information': information.user })
-    }
-    changeProgramName() {
-        return ""
     }
 
 
